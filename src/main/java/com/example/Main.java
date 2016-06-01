@@ -5,25 +5,25 @@ import org.jboss.shrinkwrap.api.asset.ClassLoaderAsset;
 import org.wildfly.swarm.container.Container;
 import org.wildfly.swarm.datasources.DatasourcesFraction;
 import org.wildfly.swarm.jaxrs.JAXRSArchive;
-import org.wildfly.swarm.jpa.JPAFraction;
+import org.wildfly.swarm.jpa.postgresql.PostgreSQLJPAFraction;
 
 public class Main {
   public static void main(String[] args) throws Exception {
     Container container = new Container();
 
-    container.fraction(new DatasourcesFraction()
-        .dataSource("MyDS", (ds) -> {
-          ds.driverName("h2");
-          ds.connectionUrl("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE");
-          ds.userName("sa");
-          ds.password("sa");
-        })
-    );
+//    container.fraction(new DatasourcesFraction()
+//        .dataSource("MyDS", (ds) -> {
+//          ds.driverName("h2");
+//          ds.connectionUrl("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE");
+//          ds.userName("sa");
+//          ds.password("sa");
+//        })
+//    );
 
     // Prevent JPA Fraction from installing it's default datasource fraction
-    container.fraction(new JPAFraction()
+    container.fraction(new PostgreSQLJPAFraction()
         .inhibitDefaultDatasource()
-        .defaultDatasource("jboss/datasources/MyDS")
+//        .defaultDatasource("jboss/datasources/MyDS")
     );
 
     container.start();
