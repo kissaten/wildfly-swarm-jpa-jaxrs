@@ -7,10 +7,10 @@
   <artifactId>demo</artifactId>
   <name>Wildfly Swarm Example</name>
   <version>1.0.0-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
 
   <properties>
-    <version.wildfly.swarm>1.0.0.CR1</version.wildfly.swarm>
+    <version.wildfly.swarm>1.0.0.CR3</version.wildfly.swarm>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -36,11 +36,12 @@
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>wildfly-swarm-plugin</artifactId>
         <version>${version.wildfly.swarm}</version>
+        <configuration>
+          <mainClass>com.example.Main</mainClass>
+        </configuration>
         <executions>
           <execution>
-            <goals>
-              <goal>package</goal>
-            </goals>
+            <id>package</id>
           </execution>
         </executions>
       </plugin>
@@ -65,9 +66,16 @@
       <artifactId>logging</artifactId>
     </dependency>
     <dependency>
-      <groupId>joda-time</groupId>
-      <artifactId>joda-time</artifactId>
-      <version>2.7</version>
+      <groupId>org.wildfly.swarm</groupId>
+      <artifactId>jaxrs-cdi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.wildfly.swarm</groupId>
+      <artifactId>jpa-postgresql</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.wildfly.swarm</groupId>
+      <artifactId>jpa</artifactId>
     </dependency>
   </dependencies>
 </project>
