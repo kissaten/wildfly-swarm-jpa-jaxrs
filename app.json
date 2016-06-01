@@ -3,5 +3,5 @@
   "description": "An example app running JBoss Wildfly Swarm using JAX-RS.",
   "website": "http://wildfly-swarm.io/",
   "addons": [],
-  "success_url": "/rest/hello"
+  "success_url": "/"
 }

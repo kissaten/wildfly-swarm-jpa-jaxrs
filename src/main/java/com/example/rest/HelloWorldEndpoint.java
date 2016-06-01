@@ -5,12 +5,12 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.GET;
 import javax.ws.rs.Produces;
 
-@Path("/hello")
+@Path("/")
 public class HelloWorldEndpoint {
 
   @GET
   @Produces("text/plain")
-  public Response doGet() {
+  public Response get() {
     return Response.ok("Hello from WildFly Swarm!").build();
   }
 }

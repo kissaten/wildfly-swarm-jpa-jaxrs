@@ -1,4 +1,4 @@
-package com.example.rest;
+package com.example.models;
 
 public class Person {
 

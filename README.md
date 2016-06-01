@@ -9,5 +9,5 @@ $ git clone https://github.com/kissaten/wildfly-swarm-jaxrs
 $ cd wildfly-swarm-jaxrs
 $ heroku create
 $ git push heroku master
-$ heroku open rest/hello
+$ heroku open
 ```
