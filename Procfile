@@ -1,1 +1,1 @@
-web: java -Dswarm.http.port=$PORT -Dswarm.ds.connection.url=$JDBC_DATABASE_URL -jar target/*-swarm.jar
+web: java -Dswarm.http.port=$PORT -jar target/*-swarm.jar

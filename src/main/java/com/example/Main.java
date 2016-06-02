@@ -16,7 +16,7 @@ public class Main {
           d.driverClassName("org.postgresql.Driver");
           d.driverModuleName("org.postgresql");
         })
-        .dataSource("MyDS", (ds) -> {
+        .dataSource("MyPU", (ds) -> {
           ds.driverName("postgresql");
           ds.connectionUrl(System.getenv("JDBC_DATABASE_URL"));
           ds.userName(System.getenv("JDBC_DATABASE_USERNAME"));
@@ -27,7 +27,7 @@ public class Main {
     // Prevent JPA Fraction from installing it's default datasource fraction
     container.fraction(new PostgreSQLJPAFraction()
         .inhibitDefaultDatasource()
-        .defaultDatasource("jboss/datasources/MyDS")
+        .defaultDatasource("jboss/datasources/MyPU")
     );
 
     container.start();
