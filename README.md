@@ -2,10 +2,10 @@
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-Or follow these steps, after installing the [Heroku Toolbelt](https://toolbelt.heroku.com/), to deploy with Maven:
+Or follow these steps after installing the [Heroku Toolbelt](https://toolbelt.heroku.com/):
 
 ```sh-session
-$ git clone https://github.com/kissaten/...
+$ git clone https://github.com/kissaten/wildfly-swarm-jpa-jaxrs
 $ cd wildfly-swarm-jpa-jaxrs
 $ heroku create
 $ git push heroku master
