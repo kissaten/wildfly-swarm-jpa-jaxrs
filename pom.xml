@@ -41,7 +41,7 @@
         </configuration>
         <executions>
           <execution>
-            <id>package</id>
+            <goals><goal>package</goal></goals>
           </execution>
         </executions>
       </plugin>
@@ -72,10 +72,6 @@
     <dependency>
       <groupId>org.wildfly.swarm</groupId>
       <artifactId>jpa-postgresql</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.wildfly.swarm</groupId>
-      <artifactId>jpa</artifactId>
     </dependency>
   </dependencies>
 </project>
