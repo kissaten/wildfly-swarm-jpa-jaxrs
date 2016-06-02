@@ -14,6 +14,7 @@ public class Main {
     container.fraction(new DatasourcesFraction()
         .jdbcDriver("postgresql", (d) -> {
           d.driverClassName("org.postgresql.Driver");
+          d.driverModuleName("org.postgresql");
         })
         .dataSource("MyDS", (ds) -> {
           ds.driverName("postgresql");
