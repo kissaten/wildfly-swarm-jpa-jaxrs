@@ -11,3 +11,8 @@ $ heroku create
 $ git push heroku master
 $ heroku open
 ```
+
+## Other Examples
+
+This example uses [ShrinkWrap](https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/getting-started/shrinkwrap.html)
+to create an archive. For a more standard layout see the [Wildfly Swarm JAX-RS example](https://github.com/kissaten/wildfly-swarm-jaxrs).
