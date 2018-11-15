@@ -1,1 +1,1 @@
-web: java -Dswarm.ds.name=MyPU -Dswarm.ds.connection.url=$JDBC_DATABASE_URL -Dswarm.ds.username=$JDBC_DATABASE_USERNAME -Dswarm.ds.password=$JDBC_DATABASE_PASSWORD -Dswarm.http.port=$PORT -jar target/*.jar
+web: java -Dswarm.ds.name="jboss/datasources/MyPU" -Dswarm.ds.connection.url=$JDBC_DATABASE_URL -Dswarm.ds.username=$JDBC_DATABASE_USERNAME -Dswarm.ds.password=$JDBC_DATABASE_PASSWORD -Dswarm.http.port=$PORT -jar target/*.jar
