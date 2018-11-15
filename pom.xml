@@ -10,7 +10,7 @@
   <packaging>jar</packaging>
 
   <properties>
-    <version.wildfly.swarm>1.0.0.CR1</version.wildfly.swarm>
+    <version.wildfly.swarm>2.2.1.Final</version.wildfly.swarm>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -20,8 +20,8 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.wildfly.swarm</groupId>
-        <artifactId>bom</artifactId>
+        <groupId>io.thorntail</groupId>
+        <artifactId>boms</artifactId>
         <version>${version.wildfly.swarm}</version>
         <scope>import</scope>
         <type>pom</type>
@@ -29,71 +29,38 @@
     </dependencies>
   </dependencyManagement>
 
-  <build>
-    <finalName>demo</finalName>
-    <plugins>
-      <plugin>
-        <groupId>org.wildfly.swarm</groupId>
-        <artifactId>wildfly-swarm-plugin</artifactId>
-        <version>${version.wildfly.swarm}</version>
-        <configuration>
-          <mainClass>com.example.Main</mainClass>
-        </configuration>
-        <executions>
-          <execution>
-            <goals><goal>package</goal></goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-clean-plugin</artifactId>
-        <version>2.5</version>
-        <executions>
-          <execution>
-            <id>clean-jar-artifacts</id>
-            <phase>install</phase>
-            <goals><goal>clean</goal></goals>
-            <configuration>
-              <excludeDefaultDirectories>true</excludeDefaultDirectories>
-              <filesets>
-                <fileset>
-                  <directory>target</directory>
-                  <excludes>
-                    <exclude>*.jar</exclude>
-                  </excludes>
-                </fileset>
-              </filesets>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
-
   <dependencies>
-    <!-- Java EE 7 dependency -->
     <dependency>
       <groupId>javax</groupId>
       <artifactId>javaee-api</artifactId>
       <version>7.0</version>
       <scope>provided</scope>
     </dependency>
-    <!-- Wildfly Swarm Fractions -->
     <dependency>
-      <groupId>org.wildfly.swarm</groupId>
+      <groupId>io.thorntail</groupId>
       <artifactId>jaxrs</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.wildfly.swarm</groupId>
+      <groupId>io.thorntail</groupId>
       <artifactId>logging</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.wildfly.swarm</groupId>
+      <groupId>io.thorntail</groupId>
       <artifactId>jaxrs-cdi</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.wildfly.swarm</groupId>
-      <artifactId>jpa-postgresql</artifactId>
+      <groupId>io.thorntail</groupId>
+      <artifactId>jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate.javax.persistence</groupId>
+      <artifactId>hibernate-jpa-2.1-api</artifactId>
+      <version>1.0.0.Final</version>
+    </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.2.5</version>
     </dependency>
   </dependencies>
 </project>

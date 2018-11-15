@@ -2,10 +2,10 @@ package com.example;
 
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.ClassLoaderAsset;
-import org.wildfly.swarm.container.Container;
-import org.wildfly.swarm.datasources.DatasourcesFraction;
-import org.wildfly.swarm.jaxrs.JAXRSArchive;
-import org.wildfly.swarm.jpa.postgresql.PostgreSQLJPAFraction;
+import io.thorntail.container.Container;
+import io.thorntail.datasources.DatasourcesFraction;
+import io.thorntail.jaxrs.JAXRSArchive;
+import io.thorntail.jpa.postgresql.PostgreSQLJPAFraction;
 
 public class Main {
   public static void main(String[] args) throws Exception {
